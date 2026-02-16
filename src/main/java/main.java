@@ -13,5 +13,7 @@ public static void main(String[] args) {
 
     ShoppingCart shoppingCart = new ShoppingCart(foods);
 
-    System.out.println(shoppingCart.getTotalWithoutDiscount());
+    System.out.println("Полная цена продуктов в корзине: " + shoppingCart.getTotalWithoutDiscount());
+    System.out.println("Цена продуктов в корзине со скидками: " + shoppingCart.getTotalWithDiscount());
+    System.out.println("Цена только вегетарианских продуктов без скидок: " + shoppingCart.getTotalAmountAllVegetarianWithoutDiscounts());
 }

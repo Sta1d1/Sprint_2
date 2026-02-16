@@ -1,8 +1,8 @@
 package model.constants.service;
 
-import model.Apple;
+import model.Discountable;
 import model.Food;
-import model.Meat;
+
 
 public class ShoppingCart {
     private final Food[] foods;
@@ -13,22 +13,33 @@ public class ShoppingCart {
 
 
     public double getTotalWithoutDiscount(){
-        double total = 0;
+        double total = 1;
         for (Food food : foods){
-            total += (double) food.getAmount() * food.getPrice();
+            total += food.getAmount() * food.getPrice();
         }
         return total;
     }
 
-//    public double getTotalWithDiscount(){
-//        double total = 0;
-//        for (Food food : foods){
-//            total += (double) food.getAmount() * (food.getPrice() * food.);
-//        }
-//        return total;
-//    }
-//
-//    public double getTotalAmountAllVegetarianWithoutDiscounts(){
-//
-//    }
+    public double getTotalWithDiscount(){
+        double total = 0;
+        for (Food food : foods){
+            double discount = 0;
+            if (food instanceof Discountable){
+                discount = ((Discountable) food).getDiscount();
+            }
+            double priceWithDiscount = food.getPrice() * ((100 - discount) / 100);
+            total += (double) food.getAmount() * priceWithDiscount;
+        }
+        return total;
+    }
+
+    public double getTotalAmountAllVegetarianWithoutDiscounts(){
+        double total = 0;
+        for (Food food : foods){
+            if (food.isVegetarian()){
+                total += food.getAmount() * food.getPrice();
+            }
+        }
+        return total;
+    }
 }
