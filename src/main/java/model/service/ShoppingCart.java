@@ -1,6 +1,4 @@
-package model.constants.service;
-
-import model.Discountable;
+package model.service;
 import model.Food;
 
 
@@ -10,7 +8,6 @@ public class ShoppingCart {
     public ShoppingCart(Food[] foods) {
         this.foods = foods;
     }
-
 
     public double getTotalWithoutDiscount(){
         double total = 1;
@@ -23,10 +20,7 @@ public class ShoppingCart {
     public double getTotalWithDiscount(){
         double total = 0;
         for (Food food : foods){
-            double discount = 0;
-            if (food instanceof Discountable){
-                discount = ((Discountable) food).getDiscount();
-            }
+            double discount = food.getDiscount();
             double priceWithDiscount = food.getPrice() * ((100 - discount) / 100);
             total += (double) food.getAmount() * priceWithDiscount;
         }
