@@ -3,7 +3,6 @@ package model;
 import model.constants.Colour;
 import model.constants.Discount;
 
-
 public class Apple extends Food {
     protected String color;
 
