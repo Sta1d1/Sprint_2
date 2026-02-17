@@ -1,6 +1,4 @@
 package model.service;
-
-import model.Discountable;
 import model.Food;
 
 
@@ -10,7 +8,6 @@ public class ShoppingCart {
     public ShoppingCart(Food[] foods) {
         this.foods = foods;
     }
-
 
     public double getTotalWithoutDiscount(){
         double total = 1;

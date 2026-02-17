@@ -1,6 +1,6 @@
 package model.constants;
 
 public class Colour {
-    public static final String RedApple = "red";
-    public static final String GreenApple = "green";
+    public static final String RED_APPLE = "red";
+    public static final String GREEN_APPLE = "green";
 }

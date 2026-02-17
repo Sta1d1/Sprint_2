@@ -3,8 +3,6 @@ package model;
 import model.constants.Colour;
 import model.constants.Discount;
 
-import java.util.Objects;
-
 public class Apple extends Food {
     protected String color;
 
@@ -15,11 +13,6 @@ public class Apple extends Food {
 
     @Override
     public double getDiscount() {
-        if (Objects.equals(this.color, Colour.RedApple)){
-            return Discount.DiscountRedApple;
-        } else if (Objects.equals(this.color, Colour.GreenApple)){
-            return Discount.DiscountGreenApple;
-        };
-        return  0;
+        return Colour.RED_APPLE.equals(color) ? Discount.DISCOUNT_RED_APPLE : 0;
     }
 }
