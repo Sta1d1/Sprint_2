@@ -1,7 +1,6 @@
 package model.service;
 import model.Food;
 
-
 public class ShoppingCart {
     private final Food[] foods;
 
