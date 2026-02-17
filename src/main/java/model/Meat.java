@@ -9,3 +9,4 @@ public class Meat extends Food {
         return 0;
     }
 }
+
