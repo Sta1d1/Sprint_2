@@ -16,3 +16,4 @@ public class Apple extends Food {
         return Colour.RED_APPLE.equals(color) ? Discount.DISCOUNT_RED_APPLE : 0;
     }
 }
+
