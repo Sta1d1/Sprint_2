@@ -1,7 +1,6 @@
 package model.service;
 import model.Food;
 
-
 public class ShoppingCart {
     private final Food[] foods;
 
@@ -10,7 +9,7 @@ public class ShoppingCart {
     }
 
     public double getTotalWithoutDiscount(){
-        double total = 1;
+        double total = 0;
         for (Food food : foods){
             total += food.getAmount() * food.getPrice();
         }
